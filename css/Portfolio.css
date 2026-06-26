@@ -149,6 +149,12 @@ body {
 .bg-img3 {
     object-position: center 100%;
 }
+.bg-img5 {
+    object-position: center 40%;
+}
+.bg-img6 {
+    object-position: center 40%;
+}
 .ph:hover, .ph.active {
     border-color: #ffffff;
     transform: translateY(-3px);
@@ -183,6 +189,78 @@ body {
     line-height: 1.6;
     z-index: 2;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+.outer5{
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 400px;
+    background-color: #757575;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.outer6{
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 400px;
+    background-color: #757575;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.qrcode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 2;
+    margin-left: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.qrcode-container:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+.qrcode-text {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    white-space: nowrap;
+}
+
+.qrcode-box {
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qrcode-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 @keyframes marquee {
     0% {
@@ -225,5 +303,14 @@ body {
     .ph {
         width: calc(50% - 10px);
         min-width: 140px;
+    }
+    .outer5 {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+    }
+    .qrcode-container {
+        margin-left: 0;
+        margin-top: 20px;
     }
 }

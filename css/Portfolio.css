@@ -88,6 +88,38 @@ body {
     position: relative;
     overflow: hidden;
 }
+.outer4{
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 400px;
+    background-color: #757575;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.bg-group-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0;
+    filter: brightness(0.4) contrast(0.9);
+    transition: opacity 0.5s ease;
+}
+.bg-group-layer.active {
+    opacity: 1;
+}
 .bg-group {
     position: absolute;
     top: 0;
@@ -98,15 +130,15 @@ body {
     z-index: 1;
     pointer-events: none;
 }
-    .outer3,.text1{
+.outer3,.text1{
     text-align: right;
 }
 .bg-img {
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.15;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
 }
 .bg-img {
     object-position: center 60%;
@@ -114,8 +146,15 @@ body {
 .bg-img2 {
     object-position: center 80%;
 }
+.bg-img3 {
+    object-position: center 100%;
+}
+.ph:hover, .ph.active {
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
 
-    .ph-group{
+.ph-group{
     display: flex;
     gap: 20px;
     align-items: flex-end;
@@ -171,5 +210,20 @@ body {
 
     .outer3 .text {
         text-align: left;
+    }
+    .outer4 {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 30px;
+    }
+    .ph-group {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .ph {
+        width: calc(50% - 10px);
+        min-width: 140px;
     }
 }

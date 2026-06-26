@@ -21,14 +21,14 @@
 </div>
   <div class="outer2">
     <div class="bg-group">
-        <img src="img/IMG_7972.PNG" class="bg-img">
+        <img src="img/IMG_7972.jpg" class="bg-img">
     </div>
     <div class="ph-group">
       <div class="ph">
-          <img src="img/IMG_7972.PNG">
+          <img src="img/IMG_7972.jpg">
       </div>
       <div class="ph">
-          <img src="img/IMG_7973.png">
+          <img src="img/IMG_7973.jpg">
       </div>
     </div>
                 <div class="text">
@@ -40,11 +40,11 @@
   </div>
   <div class="outer3">
       <div class="bg-group">
-          <img src="img/IMG_7606%20(1).PNG" class="bg-img bg-img2">
+          <img src="img/IMG_7606%20(1).jpg" class="bg-img bg-img2">
       </div>
       <div class="ph-group">
           <div class="ph">
-              <img src="img/IMG_7606%20(1).PNG">
+              <img src="img/IMG_7606%20(1).jpg">
           </div>
           <div class="ph">
                   <img src="img/WEEE.jpg">
@@ -56,7 +56,56 @@
           </div>
   </div>
 
+  <div class="outer4">
+      <div class="bg-group-layer active" id="bg-photo-1" style="background-image: url('img/IMG_6979.jpg');"></div>
+      <div class="bg-group-layer" id="bg-photo-2" style="background-image: url('img/IMG_7066.jpg');"></div>
+      <div class="bg-group-layer" id="bg-photo-3" style="background-image: url('img/IMG_7070.jpg');"></div>
+      <div class="bg-group-layer" id="bg-photo-4" style="background-image: url('img/IMG_7073.jpg');"></div>
 
+      <div class="ph-group">
+          <div class="ph active" data-target="bg-photo-1">
+              <img src="img/IMG_6979.jpg">
+          </div>
+          <div class="ph" data-target="bg-photo-2">
+              <img src="img/IMG_7066.jpg">
+          </div>
+          <div class="ph" data-target="bg-photo-3">
+              <img src="img/IMG_7070.jpg">
+          </div>
+          <div class="ph" data-target="bg-photo-4">
+              <img src="img/IMG_7073.jpg">
+          </div>
+      </div>
+      <div class="text">
+         眼睛~
+      </div>
+  </div>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const phItems = document.querySelectorAll(".ph");
+          const bgLayers = document.querySelectorAll(".bg-group-layer");
+
+          const firstBg = document.getElementById("bg-photo-1");
+          if (firstBg) firstBg.classList.add("active");
+
+          phItems.forEach(item => {
+              item.addEventListener("mouseenter", () => {
+                  const targetBgId = item.getAttribute("data-target");
+
+                  phItems.forEach(p => p.classList.remove("active"));
+                  item.classList.add("active");
+
+                  bgLayers.forEach(bg => bg.classList.remove("active"));
+
+                  const activeBg = document.getElementById(targetBgId);
+                  if (activeBg) {
+                      activeBg.classList.add("active");
+                  }
+              });
+          });
+      });
+  </script>
 
 </body>
 </html>

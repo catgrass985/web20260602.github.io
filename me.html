@@ -6,14 +6,44 @@
     <title>關於我 - 貓草</title>
     <link rel="stylesheet" href="css/me.css">
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const reviveBtn = document.getElementById('reviveBtn');
+        const loadingModal = document.getElementById('loadingModal');
 
+        if (reviveBtn && loadingModal) {
+            reviveBtn.addEventListener('click', function () {
+                loadingModal.classList.add('active'); // 點擊時加上 active 顯示
+
+                setTimeout(function () {
+                    loadingModal.classList.remove('active'); // 3 秒後移除 active 隱藏
+                    alert("貓草已復活！(๑•̀ㅂ•́)ו✧");
+                }, 3000);
+            });
+        }
+    });
+</script>
 <body>
 <div class="navbar">
     <a href="index.html" class="logo">貓草🐾</a>
 </div>
 <div class="outer">
+    <a href="javascript:void(0);" id="reviveBtn" class="revive-button">
+        <span>+</span>
+    </a>
     <div class="Photo">
         <img src="img/IMG_7322.PNG" alt="個人頭像">
+    </div>
+    <div id="loadingModal" class="modal-overlay">
+        <div class="modal-content loading-content">
+            <h2>看 60 秒廣告復活貓草</h2>
+
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+
+            <p class="loading-subtext">正在載入廣告...</p>
+        </div>
     </div>
     <div class="info-box">
         <div class="top-line">
